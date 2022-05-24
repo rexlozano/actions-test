@@ -2,7 +2,8 @@ name: Bash Set
 
 on:
   push:
-    branches: [main]
+    # TODO: Remove 1-bash-set
+    branches: [main, 1-bash-set]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -12,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: set -e
-        if: false
         run: |
           # set -e
           ls
