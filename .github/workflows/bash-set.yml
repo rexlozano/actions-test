@@ -20,5 +20,5 @@ jobs:
           set -e
           mkdir existing_folder
           ls -l existing_folder
-          ls -l missing_folder
+          # ls -l missing_folder
           ls -l existing_folder
