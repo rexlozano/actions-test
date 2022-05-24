@@ -2,8 +2,7 @@ name: Bash Set
 
 on:
   push:
-    # TODO: Remove 1-bash-set
-    branches: [main, 1-bash-set]
+    branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
