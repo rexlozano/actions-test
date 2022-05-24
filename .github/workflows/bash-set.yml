@@ -24,5 +24,5 @@ jobs:
           ls -l existing_folder
       - name: set -o pipefail
         run: |
-          # set -o pipefail
+          set -o pipefail
           mkdir existing_folder | ls -l existing_folder | ls -l missing_folder | ls -l existing_folder
