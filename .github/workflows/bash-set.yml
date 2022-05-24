@@ -14,8 +14,11 @@ jobs:
     steps:
       - name: set -e
         run: |
-          # set -e
+          # no effect since GitHub Actions adds '/usr/bin/bash -e'
+          # should exit the script if any command returns a non-zero status
+          # without this, exit code will be 0 because of the last command
+          set -e
           ls
-          ls -l missing_folder
+          # ls -l missing_folder
           mkdir existing_folder
           ls -l existing_folder
