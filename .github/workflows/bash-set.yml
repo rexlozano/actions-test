@@ -10,6 +10,7 @@ on:
 
 jobs:
   test:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: set -e
@@ -20,9 +21,11 @@ jobs:
           set -e
           mkdir existing_folder
           ls -l existing_folder
-          # ls -l missing_folder
+          ls -l missing_folder
           ls -l existing_folder
       - name: set -o pipefail
         run: |
+          # should exit the script if any pipe command returns a non-zero status
+          # without this, exit code will be 0 because of the last pipe command
           set -o pipefail
           mkdir existing_folder | ls -l existing_folder | ls -l missing_folder | ls -l existing_folder
