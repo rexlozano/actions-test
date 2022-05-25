@@ -24,13 +24,13 @@ jobs:
         run: echo ${{ env.DATA }}
       - name: Test masking by variable naming
         run: |
-          password='hello world 1'
+          password='blah 1'
           echo $password
-          token='hello world 2'
+          token='blah 2'
           echo $token
-          key='hello world 3'
+          key='blah 3'
           echo $key
-          secret='hello world 4'
+          secret='blah 4'
           echo $secret
-          message='hello world 5'
+          message='blah 5'
           echo $message
