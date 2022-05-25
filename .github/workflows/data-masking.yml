@@ -18,4 +18,6 @@ jobs:
           echo ::add-mask::$data
           echo ::set-output name=data::$data
       - name: Display data
-        run: echo ${{ steps.add-mask.outputs.data }}
+        env:
+          DATA: ${{ steps.add-mask.outputs.data }}
+        run: echo ${{ env.DATA }}
