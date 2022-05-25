@@ -1,0 +1,37 @@
+name: Data Masking
+
+on:
+  # push:
+  #   branches: [main]
+  # pull_request:
+  #   branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: add-mask
+        id: add-mask
+        run: |
+          data='hello world'
+          # should mask the data (both env var and echo output)
+          echo ::add-mask::$data
+          echo ::set-output name=data::$data
+      - name: Display add-mask data
+        env:
+          DATA: ${{ steps.add-mask.outputs.data }}
+        run: echo ${{ env.DATA }}
+      - name: Test masking by variable naming
+        run: |
+          # none of the below works
+          password='blah 1'
+          echo $password
+          token='blah 2'
+          echo $token
+          key='blah 3'
+          echo $key
+          secret='blah 4'
+          echo $secret
+          message='blah 5'
+          echo $message
