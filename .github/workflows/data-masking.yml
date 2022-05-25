@@ -30,3 +30,7 @@ jobs:
           echo $token
           key='hello world'
           echo $key
+          secret='hello world'
+          echo $secret
+          message='hello world'
+          echo $message
