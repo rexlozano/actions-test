@@ -1,15 +1,14 @@
 name: Bash Set
 
 on:
-  push:
-    branches: [main]
+  # push:
+  #   branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
 
 jobs:
   test:
-    if: false
     runs-on: ubuntu-latest
     steps:
       - name: set -e

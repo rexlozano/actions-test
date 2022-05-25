@@ -1,8 +1,8 @@
 name: Data Masking
 
 on:
-  push:
-    branches: [main, 3-data-masking]
+  # push:
+  #   branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -24,6 +24,7 @@ jobs:
         run: echo ${{ env.DATA }}
       - name: Test masking by variable naming
         run: |
+          # none of the below works
           password='blah 1'
           echo $password
           token='blah 2'
