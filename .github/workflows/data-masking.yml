@@ -15,9 +15,18 @@ jobs:
         id: add-mask
         run: |
           data='hello world'
+          # should mask the data (both env var and echo output)
           echo ::add-mask::$data
           echo ::set-output name=data::$data
       - name: Display data
         env:
           DATA: ${{ steps.add-mask.outputs.data }}
         run: echo ${{ env.DATA }}
+      - name: Test masking by variable naming
+        run: |
+          password='hello world'
+          echo $password
+          token='hello world'
+          echo $token
+          key='hello world'
+          echo $key
