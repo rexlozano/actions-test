@@ -12,6 +12,7 @@ jobs:
 
   test1:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Print
         run: echo "Print ${{ env.BLAH }}"
