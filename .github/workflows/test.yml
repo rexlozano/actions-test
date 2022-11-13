@@ -7,7 +7,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print ${{ env.BLAH }}
-        env:
-          BLAH: blah
+      - name: Save
+        run: echo "BLAH=${{ secrets.BLAH }}" >> $GITHUB_ENV
+
+  test1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print
         run: echo "Print ${{ env.BLAH }}"
